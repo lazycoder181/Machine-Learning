@@ -3,7 +3,7 @@ import pandas as pd
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 #Create dataframe
-df = pd.read_csv("Final_Sentiment_Analysis_1.csv")
+df = pd.read_csv("file_name_here.csv")
 
 #Initialization
 analyser = SentimentIntensityAnalyzer()
