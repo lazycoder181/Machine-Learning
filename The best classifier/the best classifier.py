@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import svm
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score, log_loss, jaccard_similarity_score, classification_report
+import sklearn.metrics
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression
 
@@ -36,7 +36,7 @@ knn.fit(X_train,y_train)
 pred = knn.predict(X_test)
 print(pred[0:5])
 print(y_test[0:5])
-print("The accuracy score of knn is:", accuracy_score(y_test,pred))
+print("The accuracy score of knn is:", sklearn.metrics.accuracy_score(y_test, pred))
 
 #Decision Tree
 
@@ -45,7 +45,7 @@ dt.fit(X_train,y_train)
 pred_dt = dt.predict(X_test)
 print(y_test[0:5])
 print(pred_dt[0:5])
-print("The accuracy score of the decision tree is:", accuracy_score(y_test,pred_dt))
+print("The accuracy score of the decision tree is:", sklearn.metrics.accuracy_score(y_test, pred_dt))
 
 #Logistic Regression
 
@@ -58,7 +58,7 @@ print(pred_logreg[0:5])
 pred_prob = logreg.predict_proba(X_test)
 print(pred_prob)
 
-eval = log_loss(y_test,pred_prob)
+eval = sklearn.metrics.log_loss(y_test, pred_prob)
 print("The log loss of logreg is:",eval)
 
 #SVM
